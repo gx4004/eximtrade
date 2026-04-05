@@ -5,3 +5,4 @@
 .superpowers/
 .claude/
 node_modules/
+.vercel
