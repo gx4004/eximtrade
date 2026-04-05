@@ -5,4 +5,6 @@
 .superpowers/
 .claude/
 node_modules/
-.vercel
+.vercel/
+*.log
+*.pid
