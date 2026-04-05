@@ -30,11 +30,12 @@ body {
 /* ---------- Navbar scroll transition ---------- */
 #navbar {
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
-  /* Force GPU layer to fix iOS Safari z-index bug with video */
+  /* iOS Safari: force highest GPU layer so fixed nav always renders above video sections */
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  z-index: 9999 !important;
 }
 #navbar.scrolled {
   background-color: #0F172A !important;
@@ -58,15 +59,6 @@ body {
 #company-section,
 #operations-section {
   background-color: #0F172A;
-  /* Contain stacking context so videos never escape above navbar */
-  isolation: isolate;
-  z-index: 0;
-}
-
-#hero-video,
-#company-video,
-#operations-video {
-  z-index: -1;
 }
 
 #hero-content {
