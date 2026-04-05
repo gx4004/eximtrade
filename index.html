@@ -80,7 +80,7 @@
   </header>
 
   <!-- ===== HERO SECTION ===== -->
-  <section id="hero-section" class="relative min-h-[100dvh] overflow-hidden" style="background-color:#0F172A;">
+  <section id="hero-section" class="relative min-h-[100dvh]" style="background-color:#0F172A; clip-path:inset(0);"><!-- clip-path replaces overflow:hidden to avoid iOS Safari compositing bug -->
     <video id="hero-video" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" poster="assets/video/operations-poster.jpg">
       <source src="assets/video/operations.mp4" type="video/mp4" />
     </video>
@@ -92,7 +92,7 @@
     <!-- Bottom gradient: fades to dark for seamless join -->
     <div class="absolute inset-x-0 bottom-0 z-[2]" style="height:14rem; background:linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.7) 50%, rgba(15,23,42,1) 100%);"></div>
 
-    <div id="hero-content" class="absolute inset-x-0 bottom-0 z-[3] flex items-center justify-center" style="top:80px;">
+    <div id="hero-content" class="absolute inset-0 z-[3] flex items-center justify-center pt-20">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p class="text-slate-300 text-xs font-sans font-normal tracking-[0.2em] uppercase mb-6 fade-up" style="text-shadow:0 1px 8px rgba(0,0,0,0.6);" data-i18n="home.eyebrow">Koordynacja handlu · Białystok, Polska</p>
         <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold text-white leading-tight mb-8 fade-up" style="transition-delay:0.1s; text-shadow:0 4px 40px rgba(0,0,0,0.9), 0 0 120px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.8);" data-i18n-html="home.headline_html">

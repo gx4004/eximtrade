@@ -59,6 +59,15 @@ body {
 #company-section,
 #operations-section {
   background-color: #0F172A;
+  /* clip-path used instead of overflow:hidden to avoid iOS Safari GPU layer bug */
+  clip-path: inset(0);
+}
+
+/* Ensure videos stay clipped to their section on all browsers */
+#hero-video,
+#company-video,
+#operations-video {
+  will-change: auto;
 }
 
 #hero-content {
