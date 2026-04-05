@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Skontaktuj się z Eximtrade w Białymstoku, Polska. Wyślij zapytanie handlowe dotyczące dystrybucji, zaopatrzenia lub usług eksportowych. Odpowiadamy w ciągu jednego dnia roboczego." />
+  <title>Kontakt — Eximtrade | Zapytania Handlowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{blue:{DEFAULT:'#5B9BD5',light:'#DBEAFE',dark:'#1B3A5C'}},fontFamily:{serif:['"Bodoni Moda"','Georgia','serif'],sans:['"Jost"','system-ui','sans-serif']}}}}}
+  </script>
+  <link rel="stylesheet" href="css/custom.css" />
+  <script src="js/i18n.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</head>
+<body class="font-sans bg-slate-50 text-slate-950 antialiased grain-overlay">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue focus:text-slate-950 focus:px-4 focus:py-2 focus:text-sm focus:font-sans">Skip to main content</a>
+
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center cursor-pointer"><img src="logo.png" alt="Exim Trade" class="h-10 w-auto" /></a>
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="about.html" class="nav-link text-sm font-sans font-normal tracking-wide cursor-pointer" data-i18n="nav.about">About</a>
+          <a href="services.html" class="nav-link text-sm font-sans font-normal tracking-wide cursor-pointer" data-i18n="nav.services">Services</a>
+          <a href="industries.html" class="nav-link text-sm font-sans font-normal tracking-wide cursor-pointer" data-i18n="nav.products">Sectors</a>
+          <a href="markets.html" class="nav-link text-sm font-sans font-normal tracking-wide cursor-pointer" data-i18n="nav.markets">Markets</a>
+          <a href="contact.html" class="nav-link active text-sm font-sans font-light tracking-wide cursor-pointer" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="hidden lg:inline-flex btn-blue px-5 py-2.5 text-sm cursor-pointer" data-i18n="nav.cta">Get in Touch</a>
+          <div class="hidden lg:flex items-center gap-1 ml-3 border-l border-slate-700 pl-3">
+            <button data-lang-btn="pl" onclick="I18N.switchTo('pl')" class="text-xs font-sans text-slate-400 hover:text-blue px-1.5 py-1 transition-colors cursor-pointer">PL</button>
+            <button data-lang-btn="en" onclick="I18N.switchTo('en')" class="text-xs font-sans text-slate-400 hover:text-blue px-1.5 py-1 transition-colors cursor-pointer">EN</button>
+            <button data-lang-btn="de" onclick="I18N.switchTo('de')" class="text-xs font-sans text-slate-400 hover:text-blue px-1.5 py-1 transition-colors cursor-pointer">DE</button>
+            <button data-lang-btn="ru" onclick="I18N.switchTo('ru')" class="text-xs font-sans text-slate-400 hover:text-blue px-1.5 py-1 transition-colors cursor-pointer">RU</button>
+          </div>
+          <button id="hamburger" class="lg:hidden p-2 cursor-pointer" aria-label="Open menu" data-i18n-aria="nav.menu_label">
+            <svg class="w-6 h-6 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden bg-slate-900 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col gap-1">
+        <div class="flex items-center gap-2 pb-3 mb-2 border-b border-slate-800">
+          <button data-lang-btn="pl" onclick="I18N.switchTo('pl')" class="text-xs font-sans text-slate-400 hover:text-blue px-2 py-1.5 transition-colors cursor-pointer">PL</button>
+          <button data-lang-btn="en" onclick="I18N.switchTo('en')" class="text-xs font-sans text-slate-400 hover:text-blue px-2 py-1.5 transition-colors cursor-pointer">EN</button>
+          <button data-lang-btn="de" onclick="I18N.switchTo('de')" class="text-xs font-sans text-slate-400 hover:text-blue px-2 py-1.5 transition-colors cursor-pointer">DE</button>
+          <button data-lang-btn="ru" onclick="I18N.switchTo('ru')" class="text-xs font-sans text-slate-400 hover:text-blue px-2 py-1.5 transition-colors cursor-pointer">RU</button>
+        </div>
+        <a href="about.html" class="py-3 text-sm font-sans text-slate-300 border-b border-slate-800 cursor-pointer" data-i18n="nav.about">About</a>
+        <a href="services.html" class="py-3 text-sm font-sans text-slate-300 border-b border-slate-800 cursor-pointer" data-i18n="nav.services">Services</a>
+        <a href="industries.html" class="py-3 text-sm font-sans text-slate-300 border-b border-slate-800 cursor-pointer" data-i18n="nav.products">Sectors</a>
+        <a href="markets.html" class="py-3 text-sm font-sans text-slate-300 border-b border-slate-800 cursor-pointer" data-i18n="nav.markets">Markets</a>
+        <a href="contact.html" class="py-3 text-sm font-sans text-slate-300 cursor-pointer" data-i18n="nav.contact">Contact</a>
+        <a href="contact.html" class="mt-4 btn-blue px-5 py-3 text-sm text-center cursor-pointer" data-i18n="nav.cta">Get in Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="main-content" class="page-hero relative overflow-hidden" style="padding:160px 0 100px;">
+    <img src="assets/img/contact-office.png" alt="" class="absolute inset-0 w-full h-full object-cover object-center" loading="eager" />
+    <div class="absolute inset-0" style="background:linear-gradient(105deg,rgba(15,23,42,0.92) 40%,rgba(15,23,42,0.65) 100%);"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <p class="text-blue text-xs font-sans font-light tracking-[0.25em] uppercase mb-6" data-i18n="contact.hero_label">Get in Touch</p>
+      <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold text-slate-50 leading-tight max-w-3xl" data-i18n="contact.hero_heading">Start a Trade Conversation.</h1>
+      <p class="font-sans font-light text-slate-300 text-xl mt-6 max-w-xl leading-relaxed" data-i18n="contact.hero_desc">Tell us about your trade needs. Our team typically responds within one business day.</p>
+      <div class="flex flex-wrap gap-8 mt-10">
+        <a href="mailto:eximtrade777@gmail.com" class="flex items-center gap-3 group cursor-pointer">
+          <span class="w-10 h-10 flex items-center justify-center border border-slate-600 group-hover:border-blue transition-colors duration-200">
+            <svg class="w-4 h-4 text-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          </span>
+          <span class="text-sm font-sans font-light text-slate-300 group-hover:text-white transition-colors duration-200">eximtrade777@gmail.com</span>
+        </a>
+        <a href="tel:+48535454268" class="flex items-center gap-3 group cursor-pointer">
+          <span class="w-10 h-10 flex items-center justify-center border border-slate-600 group-hover:border-blue transition-colors duration-200">
+            <svg class="w-4 h-4 text-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          </span>
+          <span class="text-sm font-sans font-light text-slate-300 group-hover:text-white transition-colors duration-200">+48 535 454 268</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
+        <div class="lg:col-span-3 order-2 lg:order-1 fade-up">
+          <div class="bg-white p-8 sm:p-10 border border-slate-200" style="box-shadow:0 20px 40px -15px rgba(0,0,0,0.06);">
+            <p class="font-serif text-2xl font-medium text-slate-900 mb-2" data-i18n="contact.form_title">Trade Inquiry Form</p>
+            <p class="font-sans font-light text-slate-500 text-sm mb-8" data-i18n="contact.form_desc">Fill in your details and we will get back to you with a tailored trade assessment.</p>
+            <form id="inquiry-form" novalidate>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                <div class="flex flex-col gap-2">
+                  <label for="full-name" class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase" data-i18n-html="contact.name_label">Full name <span class="text-blue">*</span></label>
+                  <input type="text" id="full-name" name="full-name" required class="form-input px-4 py-3 text-sm" placeholder="Your full name" data-i18n-placeholder="contact.name_placeholder" />
+                  <p class="text-xs font-sans text-red-600 hidden" data-error="full-name" data-i18n="contact.name_error">Please enter your full name.</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="company" class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase" data-i18n-html="contact.company_label">Company <span class="text-blue">*</span></label>
+                  <input type="text" id="company" name="company" required class="form-input px-4 py-3 text-sm" placeholder="Company name" data-i18n-placeholder="contact.company_placeholder" />
+                  <p class="text-xs font-sans text-red-600 hidden" data-error="company" data-i18n="contact.company_error">Please enter your company name.</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="email" class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase" data-i18n-html="contact.email_field_label">Email <span class="text-blue">*</span></label>
+                  <input type="email" id="email" name="email" required class="form-input px-4 py-3 text-sm" placeholder="your@company.com" data-i18n-placeholder="contact.email_placeholder" />
+                  <p class="text-xs font-sans text-red-600 hidden" data-error="email" data-i18n="contact.email_error">Please enter a valid email address.</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="country" class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase" data-i18n-html="contact.country_label">Country <span class="text-blue">*</span></label>
+                  <input type="text" id="country" name="country" required class="form-input px-4 py-3 text-sm" placeholder="e.g. Poland, Germany, Lithuania" data-i18n-placeholder="contact.country_placeholder" />
+                  <p class="text-xs font-sans text-red-600 hidden" data-error="country" data-i18n="contact.country_error">Please enter your country.</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2 mb-6">
+                <label for="trade-direction" class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase" data-i18n="contact.direction_label">Trade direction</label>
+                <select id="trade-direction" name="trade-direction" class="form-input px-4 py-3 text-sm cursor-pointer">
+                  <option value="" data-i18n="contact.direction_default">Select one</option>
+                  <option value="export" data-i18n="contact.direction_export">Export — I want to sell to international markets</option>
+                  <option value="import" data-i18n="contact.direction_import">Import — I want to source products internationally</option>
+                  <option value="both" data-i18n="contact.direction_both">Both — I need import and export support</option>
+                  <option value="sourcing" data-i18n="contact.direction_sourcing">Sourcing only — I need help finding suppliers</option>
+                  <option value="other" data-i18n="contact.direction_other">Other</option>
+                </select>
+              </div>
+              <div class="flex flex-col gap-2 mb-6">
+                <label for="product" class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase" data-i18n="contact.product_label">Product or commodity</label>
+                <input type="text" id="product" name="product" class="form-input px-4 py-3 text-sm" placeholder="e.g. Beverages, Cosmetics, Household Chemicals" data-i18n-placeholder="contact.product_placeholder" />
+              </div>
+              <div class="flex flex-col gap-2 mb-8">
+                <label for="message" class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase" data-i18n-html="contact.message_label">Message <span class="text-blue">*</span></label>
+                <textarea id="message" name="message" required rows="5" class="form-input px-4 py-3 text-sm resize-none" placeholder="Describe your trade needs, target markets, quantities, or any questions you have." data-i18n-placeholder="contact.message_placeholder"></textarea>
+                <p class="text-xs font-sans text-red-600 hidden" data-error="message" data-i18n="contact.message_error">Please describe your trade needs.</p>
+              </div>
+              <button type="submit" id="submit-btn" class="btn-blue w-full sm:w-auto px-10 py-4 text-sm cursor-pointer" data-i18n="contact.submit_btn">Send Inquiry</button>
+              <div id="form-success" class="hidden mt-6 p-4 bg-blue/10 border border-blue/30">
+                <p class="font-sans font-medium text-slate-900 text-sm" data-i18n="contact.success_title">Your inquiry has been received.</p>
+                <p class="font-sans font-light text-slate-600 text-xs mt-1" data-i18n="contact.success_desc">Our team will review your request and respond within one business day.</p>
+              </div>
+              <div id="form-error" class="hidden mt-6 p-4 bg-red-50 border border-red-200">
+                <p class="font-sans font-medium text-red-700 text-sm" data-i18n="contact.error_msg">Please fix the highlighted fields and try again.</p>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="lg:col-span-2 order-1 lg:order-2 fade-up" style="transition-delay:0.15s">
+          <p class="text-blue text-xs font-sans font-light tracking-[0.2em] uppercase mb-4" data-i18n="contact.info_label">Contact Information</p>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight blue-rule mb-10" data-i18n="contact.info_heading">We are ready to discuss your trade requirements.</h2>
+          <div class="mb-8">
+            <p class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase mb-1" data-i18n="contact.email_label">Email</p>
+            <a href="mailto:eximtrade777@gmail.com" class="text-sm font-sans font-light text-slate-900 hover:text-blue transition-colors duration-200 cursor-pointer">eximtrade777@gmail.com</a>
+          </div>
+          <div class="mb-8">
+            <p class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase mb-2" data-i18n="contact.hq_label">Headquarters</p>
+            <p class="text-sm font-sans font-light text-slate-900">Eximtrade sp. z o.o.</p>
+            <p class="text-sm font-sans font-light text-slate-900">ul. Hetmańska 25</p>
+            <p class="text-sm font-sans font-light text-slate-900">15-727 Białystok, Poland</p>
+          </div>
+          <div class="mb-8">
+            <p class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase mb-2" data-i18n="contact.phone_label">Phone</p>
+            <p class="text-sm font-sans font-light text-slate-900 mb-1" data-i18n="contact.phone_president">Jerzy Butkiewicz (President): <a href="tel:+48535454268" class="hover:text-blue transition-colors duration-200">+48 535 454 268</a></p>
+            <p class="text-sm font-sans font-light text-slate-900 mb-1" data-i18n="contact.phone_purchasing">Kasia Bakun (Purchasing): <a href="tel:+48603163472" class="hover:text-blue transition-colors duration-200">+48 603 163 472</a></p>
+            <p class="text-sm font-sans font-light text-slate-900" data-i18n="contact.phone_export">Hanna Loban (Export): <a href="tel:+48603206067" class="hover:text-blue transition-colors duration-200">+48 603 206 067</a></p>
+            <p class="text-xs font-sans font-light text-slate-400 mt-2" data-i18n="contact.messaging_note">Also available on Telegram, Viber, and WhatsApp</p>
+          </div>
+          <div class="mt-10">
+            <p class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase mb-3" data-i18n="contact.map_label">Our Location</p>
+            <div class="w-full h-56 border border-slate-200 overflow-hidden" style="box-shadow:0 4px 12px rgba(0,0,0,0.04);">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2369.8!2d23.1547!3d53.1325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDA3JzU3LjAiTiAyM8KwMDknMTcuMCJF!5e0!3m2!1sen!2spl!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Eximtrade office location in Białystok, Poland"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-950 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        <div class="col-span-2 lg:col-span-1">
+          <img src="logo.png" alt="Exim Trade" class="h-8 w-auto mb-2" />
+          <p class="font-sans font-light text-slate-500 text-xs tracking-wider mb-6" data-i18n="footer.tagline">International Trade &amp; Distribution</p>
+          <p class="font-sans font-light text-slate-500 text-xs leading-relaxed max-w-[200px]" data-i18n="footer.description">Consumer goods trade and distribution from Poland across Europe and Asia. Since 2019.</p>
+        </div>
+        <div>
+          <h4 class="text-xs font-sans font-light text-slate-400 tracking-[0.2em] uppercase mb-5" data-i18n="footer.company_heading">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="about.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.about">About Us</a></li>
+            <li><a href="services.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.services">Services</a></li>
+            <li><a href="industries.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.products">Sectors</a></li>
+            <li><a href="markets.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.markets">Markets</a></li>
+            <li><a href="contact.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.contact_link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-sans font-light text-slate-400 tracking-[0.2em] uppercase mb-5" data-i18n="footer.services_heading">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="services.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.distribution">Distribution</a></li>
+            <li><a href="services.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.warehousing">Warehousing</a></li>
+            <li><a href="services.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.logistics">Logistics</a></li>
+            <li><a href="services.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.export_docs">Export Documentation</a></li>
+            <li><a href="services.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.customs">Customs Clearance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-sans font-light text-slate-400 tracking-[0.2em] uppercase mb-5" data-i18n="footer.contact_heading">Contact</h4>
+          <ul class="space-y-3">
+            <li><a href="mailto:eximtrade777@gmail.com" class="text-xs font-sans font-light text-slate-500 hover:text-blue transition-colors duration-200 cursor-pointer" data-i18n="footer.email">eximtrade777@gmail.com</a></li>
+            <li><p class="text-xs font-sans font-light text-slate-500" data-i18n="footer.location">Białystok, Poland</p></li>
+            <li class="pt-2"><a href="contact.html" class="inline-block border border-blue text-blue text-xs font-sans font-light px-4 py-2.5 hover:bg-blue hover:text-slate-950 transition-all duration-200 cursor-pointer" data-i18n="footer.send_inquiry">Send an Inquiry</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs font-sans font-light text-slate-600" data-i18n="footer.copyright">© 2026 Exim Trade. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-xs font-sans font-light text-slate-600 hover:text-slate-400 transition-colors duration-200 cursor-pointer" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="#" class="text-xs font-sans font-light text-slate-600 hover:text-slate-400 transition-colors duration-200 cursor-pointer" data-i18n="footer.terms">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+    document.getElementById('hamburger').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('open'); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    const form = document.getElementById('inquiry-form');
+    const submitBtn = document.getElementById('submit-btn');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const errorBox = document.getElementById('form-error');
+      const successBox = document.getElementById('form-success');
+      errorBox.classList.add('hidden');
+      successBox.classList.add('hidden');
+      let hasError = false;
+      ['full-name', 'company', 'email', 'country', 'message'].forEach(name => {
+        const field = document.getElementById(name);
+        const error = form.querySelector(`[data-error="${name}"]`);
+        const valid = name === 'email' ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim()) : field.value.trim() !== '';
+        error.classList.toggle('hidden', valid);
+        field.classList.toggle('border-red-400', !valid);
+        hasError = hasError || !valid;
+      });
+      if (hasError) { errorBox.classList.remove('hidden'); return; }
+      submitBtn.textContent = I18N.get('contact.sending');
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.6';
+      setTimeout(() => {
+        submitBtn.textContent = I18N.get('contact.sent');
+        successBox.classList.remove('hidden');
+        form.querySelectorAll('input, select, textarea').forEach(el => { el.disabled = true; el.style.opacity = '0.5'; });
+      }, 900);
+    });
+  </script>
+</body>
+</html>

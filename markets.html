@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Eximtrade dystrybuuje towary konsumpcyjne z Polski w Europie z rozwijającymi się szlakami handlowymi do Azji. Magazynowanie w Białymstoku." />
+  <title>Rynki — Eximtrade | Sieć Dystrybucji</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{blue:{DEFAULT:'#5B9BD5',light:'#DBEAFE',dark:'#1B3A5C'}},fontFamily:{serif:['"Bodoni Moda"','Georgia','serif'],sans:['"Jost"','system-ui','sans-serif']}}}}}
+  </script>
+  <link rel="stylesheet" href="css/custom.css" />
+  <script src="js/i18n.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</head>
+<body class="font-sans bg-slate-50 text-slate-950 antialiased grain-overlay">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue focus:text-slate-950 focus:px-4 focus:py-2 focus:text-sm focus:font-sans">Skip to main content</a>
+
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center cursor-pointer"><img src="logo.png" alt="Exim Trade" class="h-10 w-auto" /></a>
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="about.html" class="nav-link text-sm font-sans font-normal tracking-wide cursor-pointer" data-i18n="nav.about">About</a>
+          <a href="services.html" class="nav-link text-sm font-sans font-normal tracking-wide cursor-pointer" data-i18n="nav.services">Services</a>
+          <a href="industries.html" class="nav-link text-sm font-sans font-normal tracking-wide cursor-pointer" data-i18n="nav.products">Sectors</a>
+          <a href="markets.html" class="nav-link active text-sm font-sans font-light tracking-wide cursor-pointer" data-i18n="nav.markets">Markets</a>
+          <a href="contact.html" class="nav-link text-sm font-sans font-normal tracking-wide cursor-pointer" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="hidden lg:inline-flex btn-blue px-5 py-2.5 text-sm cursor-pointer" data-i18n="nav.cta">Get in Touch</a>
+          <div class="hidden lg:flex items-center gap-1 ml-3 border-l border-slate-700 pl-3">
+            <button data-lang-btn="pl" onclick="I18N.switchTo('pl')" class="text-xs font-sans text-slate-400 hover:text-blue px-1.5 py-1 transition-colors cursor-pointer">PL</button>
+            <button data-lang-btn="en" onclick="I18N.switchTo('en')" class="text-xs font-sans text-slate-400 hover:text-blue px-1.5 py-1 transition-colors cursor-pointer">EN</button>
+            <button data-lang-btn="de" onclick="I18N.switchTo('de')" class="text-xs font-sans text-slate-400 hover:text-blue px-1.5 py-1 transition-colors cursor-pointer">DE</button>
+            <button data-lang-btn="ru" onclick="I18N.switchTo('ru')" class="text-xs font-sans text-slate-400 hover:text-blue px-1.5 py-1 transition-colors cursor-pointer">RU</button>
+          </div>
+          <button id="hamburger" class="lg:hidden p-2 cursor-pointer" aria-label="Open menu" data-i18n-aria="nav.menu_label">
+            <svg class="w-6 h-6 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden bg-slate-900 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col gap-1">
+        <div class="flex items-center gap-2 pb-3 mb-2 border-b border-slate-800">
+          <button data-lang-btn="pl" onclick="I18N.switchTo('pl')" class="text-xs font-sans text-slate-400 hover:text-blue px-2 py-1.5 transition-colors cursor-pointer">PL</button>
+          <button data-lang-btn="en" onclick="I18N.switchTo('en')" class="text-xs font-sans text-slate-400 hover:text-blue px-2 py-1.5 transition-colors cursor-pointer">EN</button>
+          <button data-lang-btn="de" onclick="I18N.switchTo('de')" class="text-xs font-sans text-slate-400 hover:text-blue px-2 py-1.5 transition-colors cursor-pointer">DE</button>
+          <button data-lang-btn="ru" onclick="I18N.switchTo('ru')" class="text-xs font-sans text-slate-400 hover:text-blue px-2 py-1.5 transition-colors cursor-pointer">RU</button>
+        </div>
+        <a href="about.html" class="py-3 text-sm font-sans text-slate-300 border-b border-slate-800 cursor-pointer" data-i18n="nav.about">About</a>
+        <a href="services.html" class="py-3 text-sm font-sans text-slate-300 border-b border-slate-800 cursor-pointer" data-i18n="nav.services">Services</a>
+        <a href="industries.html" class="py-3 text-sm font-sans text-slate-300 border-b border-slate-800 cursor-pointer" data-i18n="nav.products">Sectors</a>
+        <a href="markets.html" class="py-3 text-sm font-sans text-slate-300 border-b border-slate-800 cursor-pointer" data-i18n="nav.markets">Markets</a>
+        <a href="contact.html" class="py-3 text-sm font-sans text-slate-300 cursor-pointer" data-i18n="nav.contact">Contact</a>
+        <a href="contact.html" class="mt-4 btn-blue px-5 py-3 text-sm text-center cursor-pointer" data-i18n="nav.cta">Get in Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="main-content" class="page-hero relative overflow-hidden">
+    <img src="assets/img/markets-highway.png" alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" />
+    <div class="absolute inset-0" style="background:linear-gradient(105deg,rgba(15,23,42,0.92) 40%,rgba(15,23,42,0.7) 100%);"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <p class="text-blue text-xs font-sans font-light tracking-[0.25em] uppercase mb-6" data-i18n="markets.hero_label">Our Network</p>
+      <h1 class="font-serif text-5xl sm:text-6xl font-semibold text-slate-50 leading-tight max-w-3xl" data-i18n="markets.hero_heading">Our Distribution Network.</h1>
+      <p class="font-sans font-light text-slate-400 text-xl mt-6 max-w-2xl leading-relaxed" data-i18n="markets.hero_desc">Based in Białystok, Poland, we distribute consumer goods across Central and Eastern Europe with expanding trade partnerships in Asian markets.</p>
+    </div>
+  </section>
+
+  <!-- Stats bar -->
+  <section class="bg-slate-50 py-16 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-slate-200">
+        <div class="text-center fade-up">
+          <p class="text-2xl sm:text-3xl font-serif font-semibold text-slate-900" data-i18n="markets.stat_1_value">Poland</p>
+          <p class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase mt-2" data-i18n="markets.stat_1_label">Home Market</p>
+        </div>
+        <div class="text-center lg:pl-8 fade-up" style="transition-delay:0.07s">
+          <p class="text-2xl sm:text-3xl font-serif font-semibold text-slate-900" data-i18n="markets.stat_2_value">Europe</p>
+          <p class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase mt-2" data-i18n="markets.stat_2_label">Active Distribution</p>
+        </div>
+        <div class="text-center lg:pl-8 fade-up" style="transition-delay:0.14s">
+          <p class="text-2xl sm:text-3xl font-serif font-semibold text-slate-900" data-i18n="markets.stat_3_value">Asia</p>
+          <p class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase mt-2" data-i18n="markets.stat_3_label">Expanding</p>
+        </div>
+        <div class="text-center lg:pl-8 fade-up" style="transition-delay:0.21s">
+          <p class="stat-number text-3xl sm:text-4xl font-serif font-semibold text-slate-900" data-i18n="markets.stat_4_value" data-count-to="7">7</p>
+          <p class="text-xs font-sans font-light text-slate-500 tracking-widest uppercase mt-2" data-i18n="markets.stat_4_label">Languages Spoken</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Poland -->
+    <section class="bg-white py-20 lg:py-24 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div class="fade-up">
+            <p class="text-blue text-xs font-sans font-light tracking-[0.2em] uppercase mb-4" data-i18n="markets.r1_label">Home Market</p>
+            <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-slate-900 leading-tight blue-rule" data-i18n="markets.r1_title">Poland</h2>
+            <p class="font-sans font-light text-slate-600 text-base leading-relaxed mt-8 mb-6" data-i18n="markets.r1_desc">Our home base. We operate warehouse facilities in Białystok and distribute consumer goods to wholesale buyers, retail chains, and HoReCa establishments across Poland. Poland is the foundation of our distribution network and the hub for all outbound European and Asian trade.</p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-3"><span class="text-blue mt-0.5">·</span><span class="font-sans font-light text-slate-600 text-sm" data-i18n="markets.r1_feature_1">Warehousing in Białystok</span></li>
+              <li class="flex items-start gap-3"><span class="text-blue mt-0.5">·</span><span class="font-sans font-light text-slate-600 text-sm" data-i18n="markets.r1_feature_2">Nationwide wholesale distribution</span></li>
+              <li class="flex items-start gap-3"><span class="text-blue mt-0.5">·</span><span class="font-sans font-light text-slate-600 text-sm" data-i18n="markets.r1_feature_3">Retail chain supply</span></li>
+              <li class="flex items-start gap-3"><span class="text-blue mt-0.5">·</span><span class="font-sans font-light text-slate-600 text-sm" data-i18n="markets.r1_feature_4">HoReCa distribution</span></li>
+              <li class="flex items-start gap-3"><span class="text-blue mt-0.5">·</span><span class="font-sans font-light text-slate-600 text-sm" data-i18n="markets.r1_feature_5">Cargo consolidation hub</span></li>
+            </ul>
+          </div>
+          <div class="fade-up" style="transition-delay:0.15s">
+            <img src="assets/img/market-poland.png" alt="Warehouse and logistics operations in Poland" class="w-full object-cover" style="aspect-ratio:4/3;" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Europe -->
+    <section class="bg-slate-50 py-20 lg:py-24 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div class="fade-up lg:order-last">
+            <p class="text-blue text-xs font-sans font-light tracking-[0.2em] uppercase mb-4" data-i18n="markets.r2_label">Active Markets</p>
+            <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-slate-900 leading-tight blue-rule" data-i18n="markets.r2_title">Europe</h2>
+            <p class="font-sans font-light text-slate-600 text-base leading-relaxed mt-8 mb-6" data-i18n="markets.r2_desc">We distribute consumer goods to European buyers through established trade relationships and logistics corridors. Our multilingual team handles export documentation, customs clearance, and freight coordination across EU borders.</p>
+            <div class="flex flex-wrap gap-3 mt-2">
+              <span class="border border-slate-200 text-slate-700 text-sm font-sans font-light px-4 py-2" data-i18n="markets.r2_country_1">Germany</span>
+              <span class="border border-slate-200 text-slate-700 text-sm font-sans font-light px-4 py-2" data-i18n="markets.r2_country_2">Lithuania</span>
+              <span class="border border-slate-200 text-slate-700 text-sm font-sans font-light px-4 py-2" data-i18n="markets.r2_country_3">Czech Republic</span>
+              <span class="border border-slate-200 text-slate-700 text-sm font-sans font-light px-4 py-2" data-i18n="markets.r2_country_4">France</span>
+              <span class="border border-slate-200 text-slate-700 text-sm font-sans font-light px-4 py-2" data-i18n="markets.r2_country_5">Spain</span>
+              <span class="border border-slate-200 text-slate-700 text-sm font-sans font-light px-4 py-2" data-i18n="markets.r2_country_6">Netherlands</span>
+              <span class="border border-slate-200 text-blue text-sm font-sans font-light px-4 py-2" data-i18n="markets.r2_country_7">And expanding</span>
+            </div>
+          </div>
+          <div class="fade-up">
+            <img src="assets/img/market-europe.png" alt="European freight container terminal" class="w-full object-cover" style="aspect-ratio:4/3;" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Asia -->
+    <section class="bg-white py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div class="fade-up">
+            <p class="text-blue text-xs font-sans font-light tracking-[0.2em] uppercase mb-4" data-i18n="markets.r3_label">Expanding Market</p>
+            <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-slate-900 leading-tight blue-rule" data-i18n="markets.r3_title">Asia</h2>
+            <p class="font-sans font-light text-slate-600 text-base leading-relaxed mt-8 mb-6" data-i18n="markets.r3_desc">We are actively building trade relationships in Asian markets, establishing sourcing partnerships and exploring distribution opportunities for consumer goods. Our multilingual team — including speakers of Russian and English — facilitates communication with Asian trade partners.</p>
+            <div class="flex flex-wrap gap-3">
+              <span class="border border-slate-200 text-slate-700 text-sm font-sans font-light px-4 py-2" data-i18n="markets.r3_tag_1">Active sourcing partnerships</span>
+              <span class="border border-slate-200 text-slate-700 text-sm font-sans font-light px-4 py-2" data-i18n="markets.r3_tag_2">Growing trade volume</span>
+              <span class="border border-slate-200 text-slate-700 text-sm font-sans font-light px-4 py-2" data-i18n="markets.r3_tag_3">Multilingual support</span>
+            </div>
+          </div>
+          <div class="fade-up" style="transition-delay:0.15s">
+            <img src="assets/img/market-asia.png" alt="Asian container port at dusk" class="w-full object-cover" style="aspect-ratio:4/3;" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="bg-slate-900 py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-up">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-slate-50 leading-tight mb-4" data-i18n="markets.cta_heading">Looking for a European distribution partner?</h2>
+          <p class="font-sans font-light text-slate-400 text-base mb-10 max-w-lg mx-auto" data-i18n="markets.cta_desc">Tell us what products you need distributed and your target volumes. We will assess how we can serve your market.</p>
+          <a href="contact.html" class="btn-blue px-10 py-4 text-sm inline-block cursor-pointer" data-i18n="markets.cta_btn">Get in Touch →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        <div class="col-span-2 lg:col-span-1">
+          <img src="logo.png" alt="Exim Trade" class="h-8 w-auto mb-2" />
+          <p class="font-sans font-light text-slate-500 text-xs tracking-wider mb-6" data-i18n="footer.tagline">International Trade &amp; Distribution</p>
+          <p class="font-sans font-light text-slate-500 text-xs leading-relaxed max-w-[200px]" data-i18n="footer.description">Consumer goods trade and distribution from Poland across Europe and Asia. Since 2019.</p>
+        </div>
+        <div>
+          <h4 class="text-xs font-sans font-light text-slate-400 tracking-[0.2em] uppercase mb-5" data-i18n="footer.company_heading">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="about.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.about">About Us</a></li>
+            <li><a href="services.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.services">Services</a></li>
+            <li><a href="industries.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.products">Sectors</a></li>
+            <li><a href="markets.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.markets">Markets</a></li>
+            <li><a href="contact.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.contact_link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-sans font-light text-slate-400 tracking-[0.2em] uppercase mb-5" data-i18n="footer.services_heading">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="services.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.distribution">Distribution</a></li>
+            <li><a href="services.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.warehousing">Warehousing</a></li>
+            <li><a href="services.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.logistics">Logistics</a></li>
+            <li><a href="services.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.export_docs">Export Documentation</a></li>
+            <li><a href="services.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.customs">Customs Clearance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-sans font-light text-slate-400 tracking-[0.2em] uppercase mb-5" data-i18n="footer.contact_heading">Contact</h4>
+          <ul class="space-y-3">
+            <li><a href="mailto:eximtrade777@gmail.com" class="text-xs font-sans font-light text-slate-500 hover:text-blue transition-colors duration-200 cursor-pointer" data-i18n="footer.email">eximtrade777@gmail.com</a></li>
+            <li><p class="text-xs font-sans font-light text-slate-500" data-i18n="footer.location">Białystok, Poland</p></li>
+            <li class="pt-2"><a href="contact.html" class="inline-block border border-blue text-blue text-xs font-sans font-light px-4 py-2.5 hover:bg-blue hover:text-slate-950 transition-all duration-200 cursor-pointer" data-i18n="footer.send_inquiry">Send an Inquiry</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs font-sans font-light text-slate-600" data-i18n="footer.copyright">© 2026 Exim Trade. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-xs font-sans font-light text-slate-600 hover:text-slate-400 transition-colors duration-200 cursor-pointer" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="#" class="text-xs font-sans font-light text-slate-600 hover:text-slate-400 transition-colors duration-200 cursor-pointer" data-i18n="footer.terms">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+    document.getElementById('hamburger').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('open'); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+/* ==========================================================
+   Exim Trade — Custom CSS
+   Supplements Tailwind CDN with scrollbar, fonts, and
+   scroll-triggered animations.
+   ========================================================== */
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Jost', system-ui, sans-serif;
+  background-color: #F7F8FA;
+  color: #0F172A;
+}
+
+/* ---------- Custom scrollbar ---------- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0F172A; }
+::-webkit-scrollbar-thumb { background: #5B9BD5; border-radius: 3px; }
+
+/* ---------- Selection ---------- */
+::selection { background: #5B9BD5; color: #FFFFFF; }
+
+/* ---------- Navbar scroll transition ---------- */
+#navbar {
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+#navbar.scrolled {
+  background-color: #0F172A !important;
+  box-shadow: 0 1px 0 rgba(91,155,213,0.15);
+}
+
+/* ---------- Mobile menu ---------- */
+#mobile-menu {
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+#mobile-menu.open {
+  max-height: 400px;
+  opacity: 1;
+}
+
+/* ---------- Video Sections ---------- */
+#hero-section,
+#company-section,
+#operations-section {
+  background-color: #0F172A;
+}
+
+#hero-video,
+#company-video,
+#operations-video {
+  z-index: 0;
+}
+
+#hero-content {
+  will-change: opacity, transform;
+}
+
+/* ---------- Grain/noise overlay ---------- */
+.grain-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px;
+  opacity: 0.15;
+}
+
+/* ---------- Section transitions ---------- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Counter animation ---------- */
+.stat-number {
+  font-family: 'Bodoni Moda', Georgia, serif;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Blue underline for headings ---------- */
+.blue-rule::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: #5B9BD5;
+  margin-top: 16px;
+}
+
+.blue-rule-center::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: #5B9BD5;
+  margin: 16px auto 0;
+}
+
+/* ---------- Service card hover ---------- */
+.service-card {
+  border: 1px solid rgba(91,155,213,0.1);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+.service-card:hover {
+  border-color: rgba(91,155,213,0.4);
+  background-color: rgba(91,155,213,0.04);
+}
+
+/* ---------- Process step number ---------- */
+.step-number {
+  font-family: 'Bodoni Moda', Georgia, serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(91,155,213,0.15);
+  font-weight: 700;
+}
+
+/* ---------- Region card hover ---------- */
+.region-card {
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+.region-card:hover {
+  border-color: rgba(91,155,213,0.3);
+  background-color: rgba(91,155,213,0.05);
+}
+
+/* ---------- Industry tag ---------- */
+.industry-tag {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.industry-tag:hover {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  border-color: #0F172A;
+}
+
+/* ---------- Page fade transition ---------- */
+body {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+body.page-visible {
+  opacity: 1;
+}
+
+/* ---------- CTA button ---------- */
+.btn-blue {
+  background-color: #5B9BD5;
+  color: #FFFFFF;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.btn-blue:hover {
+  background-color: #4A86BD;
+}
+.btn-blue:active { transform: scale(0.98); }
+
+/* Button shimmer sweep */
+.btn-blue::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  transform: skewX(-20deg);
+  transition: left 0s;
+  pointer-events: none;
+}
+.btn-blue:hover::after {
+  left: 150%;
+  transition: left 0.5s ease;
+}
+
+.btn-ghost {
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #E2E8F0;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: rgba(91,155,213,0.6);
+  color: #5B9BD5;
+}
+
+.btn-dark {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: background-color 0.2s ease;
+}
+.btn-dark:hover { background-color: #020617; }
+
+/* ---------- Form inputs ---------- */
+.form-input {
+  background-color: #F7F8FA;
+  border: 1px solid #E2E8F0;
+  color: #0F172A;
+  font-family: 'Jost', sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-input:focus {
+  outline: none;
+  border-color: #5B9BD5;
+  box-shadow: 0 0 0 3px rgba(91,155,213,0.12);
+}
+.form-input::placeholder { color: #94A3B8; }
+
+/* ---------- Nav link hover ---------- */
+.nav-link {
+  position: relative;
+  color: #94A3B8;
+  transition: color 0.2s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #5B9BD5;
+  transition: width 0.25s ease;
+}
+.nav-link:hover { color: #F8FAFC; }
+.nav-link:hover::after { width: 100%; }
+.nav-link.active { color: #F8FAFC; }
+.nav-link.active::after { width: 100%; }
+
+/* ---------- Focus-visible for accessibility ---------- */
+.btn-blue:focus-visible,
+.btn-ghost:focus-visible,
+.btn-dark:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid #5B9BD5;
+  outline-offset: 2px;
+}
+
+.form-input:focus-visible {
+  outline: none;
+  border-color: #5B9BD5;
+  box-shadow: 0 0 0 3px rgba(91,155,213,0.12);
+}
+
+/* ---------- Page hero (inner pages) ---------- */
+.page-hero {
+  background-color: #0F172A;
+  padding: 120px 0 80px;
+}
+
+/* ---------- Why-us item divider ---------- */
+.why-item + .why-item {
+  border-top: 1px solid #E2E8F0;
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.why-item-dark + .why-item-dark {
+  border-top: 1px solid rgba(91,155,213,0.1);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+/* ---------- Language switcher ---------- */
+[data-lang-btn].active {
+  color: #5B9BD5;
+}
+
+.text-blue { color: #5B9BD5; }
+
+/* ---------- Scroll-driven video ---------- */
+#scroll-video-wrapper {
+  position: relative;
+}
+
+#operations-section {
+  will-change: auto;
+}
+
+#ops-content {
+  will-change: opacity, transform;
+}
