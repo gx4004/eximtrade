@@ -80,7 +80,7 @@
   </header>
 
   <!-- ===== HERO SECTION ===== -->
-  <section id="hero-section" class="relative min-h-[100dvh]" style="background-color:#0F172A; clip-path:inset(0);"><!-- clip-path replaces overflow:hidden to avoid iOS Safari compositing bug -->
+  <section id="hero-section" class="relative" style="background-color:#0F172A; clip-path:inset(0);"><!-- clip-path replaces overflow:hidden to avoid iOS Safari compositing bug -->
     <video id="hero-video" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" poster="assets/video/operations-poster.jpg">
       <source src="assets/video/operations.mp4" type="video/mp4" />
     </video>
@@ -92,25 +92,25 @@
     <!-- Bottom gradient: fades to dark for seamless join -->
     <div class="absolute inset-x-0 bottom-0 z-[2]" style="height:14rem; background:linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.7) 50%, rgba(15,23,42,1) 100%);"></div>
 
-    <div id="hero-content" class="absolute inset-0 z-[3] flex items-center justify-center pt-20">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-slate-300 text-xs font-sans font-normal tracking-[0.2em] uppercase mb-6 fade-up" style="text-shadow:0 1px 8px rgba(0,0,0,0.6);" data-i18n="home.eyebrow">Koordynacja handlu · Białystok, Polska</p>
-        <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold text-white leading-tight mb-8 fade-up" style="transition-delay:0.1s; text-shadow:0 4px 40px rgba(0,0,0,0.9), 0 0 120px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.8);" data-i18n-html="home.headline_html">
-          Pozyskujemy, magazynujemy i dostarczamy <em class="not-italic text-blue" style="text-shadow:0 4px 40px rgba(91,155,213,0.4), 0 0 120px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.8);">towary konsumpcyjne.</em>
+    <div id="hero-content" class="absolute inset-0 z-[3] flex items-center justify-center">
+      <div class="hero-shell mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="hero-eyebrow text-slate-300 text-xs font-sans font-normal tracking-[0.2em] uppercase fade-up" style="text-shadow:0 1px 8px rgba(0,0,0,0.6);" data-i18n="home.eyebrow">Eximtrade · Białystok, Polska</p>
+        <h1 class="hero-title font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold text-white leading-tight fade-up" style="transition-delay:0.1s; text-shadow:0 4px 40px rgba(0,0,0,0.9), 0 0 120px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.8);" data-i18n-html="home.headline_html">
+          Handel konsumpcyjny, <em class="not-italic text-blue" style="text-shadow:0 4px 40px rgba(91,155,213,0.4), 0 0 120px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.8);">zorganizowany od początku.</em>
         </h1>
-        <p class="font-sans font-light text-lg sm:text-xl text-white/90 leading-relaxed mb-10 max-w-2xl mx-auto fade-up" style="transition-delay:0.2s; text-shadow:0 2px 24px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.5);" data-i18n="home.subheadline">
-          Od wyboru dostawcy po odprawę celną i dostawę końcową — koordynujemy handel transgraniczny, abyś mógł skupić się na swoim rynku.
+        <p class="hero-subheadline font-sans font-light text-lg sm:text-xl text-white/90 leading-relaxed fade-up" style="transition-delay:0.2s; text-shadow:0 2px 24px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.5);" data-i18n="home.subheadline">
+          Pozyskanie, magazynowanie i dostawa w jednym, spokojnie prowadzonym modelu B2B.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-14 fade-up" style="transition-delay:0.3s">
+        <div class="hero-actions flex flex-col sm:flex-row justify-center gap-4 fade-up" style="transition-delay:0.3s">
           <a href="contact.html" class="btn-blue px-8 py-4 text-sm cursor-pointer inline-block text-center" data-i18n="home.cta_primary">Zapytaj o ofertę</a>
           <a href="services.html" class="btn-ghost px-8 py-4 text-sm cursor-pointer inline-block text-center" style="background:rgba(0,0,0,0.45); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-color:rgba(255,255,255,0.3);" data-i18n="home.cta_secondary">Poznaj nasze usługi →</a>
         </div>
-        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 fade-up" style="transition-delay:0.4s">
-          <span class="text-xs font-sans font-light text-white/70 tracking-wider" style="text-shadow:0 1px 10px rgba(0,0,0,0.8);" data-i18n="home.trust_1">Operacje magazynowe w Białymstoku</span>
-          <span class="text-white/30">·</span>
-          <span class="text-xs font-sans font-light text-white/70 tracking-wider" style="text-shadow:0 1px 10px rgba(0,0,0,0.8);" data-i18n="home.trust_2">Pełna dokumentacja celna i eksportowa</span>
-          <span class="text-white/30">·</span>
-          <span class="text-xs font-sans font-light text-white/70 tracking-wider" style="text-shadow:0 1px 10px rgba(0,0,0,0.8);" data-i18n="home.trust_3">Wielojęzyczny zespół — 7 języków</span>
+        <div class="hero-trust flex flex-wrap items-center justify-center gap-x-6 gap-y-2 fade-up" style="transition-delay:0.4s">
+          <span class="text-xs font-sans font-light text-white/70 tracking-wider" style="text-shadow:0 1px 10px rgba(0,0,0,0.8);" data-i18n="home.trust_1">Magazyn w Białymstoku</span>
+          <span class="hero-trust-dot">·</span>
+          <span class="text-xs font-sans font-light text-white/70 tracking-wider" style="text-shadow:0 1px 10px rgba(0,0,0,0.8);" data-i18n="home.trust_2">Dokumentacja celna i eksportowa</span>
+          <span class="hero-trust-dot">·</span>
+          <span class="text-xs font-sans font-light text-white/70 tracking-wider" style="text-shadow:0 1px 10px rgba(0,0,0,0.8);" data-i18n="home.trust_3">Zespół w 7 językach</span>
         </div>
       </div>
     </div>
@@ -472,12 +472,19 @@
       const scrollInd = document.getElementById('hero-scroll-indicator');
       if (!heroContent) return;
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const mobileMotionDisabled = window.matchMedia('(max-width: 767px), (hover: none) and (pointer: coarse)').matches;
+      if (mobileMotionDisabled) {
+        heroContent.style.opacity = '1';
+        heroContent.style.transform = 'none';
+        if (scrollInd) scrollInd.style.opacity = '0.4';
+        return;
+      }
 
       const onScroll = () => {
         const vh = window.innerHeight;
         const p = Math.min(window.scrollY / (vh * 0.6), 1);
         heroContent.style.opacity = 1 - p;
-        heroContent.style.transform = `translateY(${p * -30}px)`;
+        heroContent.style.transform = `translate3d(0, ${p * -18}px, 0)`;
         if (scrollInd) scrollInd.style.opacity = (1 - p) * 0.4;
       };
       window.addEventListener('scroll', onScroll, { passive: true });
