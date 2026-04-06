@@ -1,0 +1,497 @@
+/* ==========================================================
+   Exim Trade — Custom CSS
+   Supplements Tailwind CDN with scrollbar, fonts, and
+   scroll-triggered animations.
+   ========================================================== */
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  --header-height: 5rem;
+  --safe-area-top: env(safe-area-inset-top, 0px);
+}
+
+body {
+  font-family: 'Jost', system-ui, sans-serif;
+  background-color: #F7F8FA;
+  color: #0F172A;
+}
+
+/* ---------- Custom scrollbar ---------- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0F172A; }
+::-webkit-scrollbar-thumb { background: #5B9BD5; border-radius: 3px; }
+
+/* ---------- Selection ---------- */
+::selection { background: #5B9BD5; color: #FFFFFF; }
+
+/* ---------- Navbar scroll transition ---------- */
+#navbar {
+  /* Explicit position for iOS Safari — don't rely solely on Tailwind class */
+  position: fixed;
+  width: 100%;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+  /* iOS Safari: force highest GPU layer so fixed nav always renders above video sections */
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  isolation: isolate;
+  padding-top: var(--safe-area-top);
+  /* Raised above grain-overlay::after (z-index: 1000) to win compositing order */
+  z-index: 10000 !important;
+}
+#navbar.scrolled {
+  background-color: #0F172A !important;
+  box-shadow: 0 1px 0 rgba(91,155,213,0.15);
+}
+
+/* ---------- Mobile menu ---------- */
+#mobile-menu {
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+#mobile-menu.open {
+  max-height: 400px;
+  opacity: 1;
+}
+
+/* ---------- Video Sections ---------- */
+#hero-section,
+#company-section,
+#operations-section {
+  background-color: #0F172A;
+  /* clip-path + overflow:hidden belt-and-suspenders for iOS Safari video containment */
+  overflow: hidden;
+  clip-path: inset(0);
+  isolation: isolate;
+  contain: paint;
+}
+
+/* Ensure videos stay clipped to their section on all browsers.
+   No transform: translateZ(0) — GPU promotion here competes with the fixed navbar
+   on iOS Safari. The parent section's clip-path + overflow:hidden handles containment. */
+#hero-video,
+#company-video,
+#operations-video {
+  will-change: auto;
+}
+
+#hero-content {
+  will-change: opacity, transform;
+  padding-top: calc(var(--header-height) + var(--safe-area-top) + 1.5rem);
+  padding-bottom: 2.5rem;
+}
+
+#hero-section {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+@supports (min-height: 100dvh) {
+  #hero-section {
+    min-height: 100dvh;
+  }
+}
+
+.hero-shell {
+  width: min(100%, 52rem);
+}
+
+.hero-eyebrow {
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  max-width: 14ch;
+  margin: 0 auto 1.5rem;
+  text-wrap: balance;
+}
+
+.hero-subheadline {
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+}
+
+.hero-actions {
+  margin-bottom: 2.25rem;
+}
+
+.hero-trust {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.hero-trust-dot {
+  color: rgba(255,255,255,0.24);
+}
+
+/* ---------- Grain/noise overlay ---------- */
+.grain-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  /* Lowered from 9999 — must stay below navbar (10000). Grain is decorative only. */
+  z-index: 1000;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px;
+  opacity: 0.15;
+}
+
+/* ---------- Section transitions ---------- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Counter animation ---------- */
+.stat-number {
+  font-family: 'Bodoni Moda', Georgia, serif;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Blue underline for headings ---------- */
+.blue-rule::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: #5B9BD5;
+  margin-top: 16px;
+}
+
+.blue-rule-center::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: #5B9BD5;
+  margin: 16px auto 0;
+}
+
+/* ---------- Service card hover ---------- */
+.service-card {
+  border: 1px solid rgba(91,155,213,0.1);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+.service-card:hover {
+  border-color: rgba(91,155,213,0.4);
+  background-color: rgba(91,155,213,0.04);
+}
+
+/* ---------- Process step number ---------- */
+.step-number {
+  font-family: 'Bodoni Moda', Georgia, serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(91,155,213,0.15);
+  font-weight: 700;
+}
+
+/* ---------- Region card hover ---------- */
+.region-card {
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+.region-card:hover {
+  border-color: rgba(91,155,213,0.3);
+  background-color: rgba(91,155,213,0.05);
+}
+
+/* ---------- Industry tag ---------- */
+.industry-tag {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.industry-tag:hover {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  border-color: #0F172A;
+}
+
+/* ---------- Page fade transition ---------- */
+body {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+body.page-visible {
+  opacity: 1;
+}
+
+/* ---------- CTA button ---------- */
+.btn-blue {
+  background-color: #5B9BD5;
+  color: #FFFFFF;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.btn-blue:hover {
+  background-color: #4A86BD;
+}
+.btn-blue:active { transform: scale(0.98); }
+
+/* Button shimmer sweep */
+.btn-blue::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  transform: skewX(-20deg);
+  transition: left 0s;
+  pointer-events: none;
+}
+.btn-blue:hover::after {
+  left: 150%;
+  transition: left 0.5s ease;
+}
+
+.btn-ghost {
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #E2E8F0;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: rgba(91,155,213,0.6);
+  color: #5B9BD5;
+}
+
+.btn-dark {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: background-color 0.2s ease;
+}
+.btn-dark:hover { background-color: #020617; }
+
+/* ---------- Form inputs ---------- */
+.form-input {
+  background-color: #F7F8FA;
+  border: 1px solid #E2E8F0;
+  color: #0F172A;
+  font-family: 'Jost', sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-input:focus {
+  outline: none;
+  border-color: #5B9BD5;
+  box-shadow: 0 0 0 3px rgba(91,155,213,0.12);
+}
+.form-input::placeholder { color: #94A3B8; }
+
+/* ---------- Nav link hover ---------- */
+.nav-link {
+  position: relative;
+  color: #94A3B8;
+  transition: color 0.2s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #5B9BD5;
+  transition: width 0.25s ease;
+}
+.nav-link:hover { color: #F8FAFC; }
+.nav-link:hover::after { width: 100%; }
+.nav-link.active { color: #F8FAFC; }
+.nav-link.active::after { width: 100%; }
+
+/* ---------- Focus-visible for accessibility ---------- */
+.btn-blue:focus-visible,
+.btn-ghost:focus-visible,
+.btn-dark:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid #5B9BD5;
+  outline-offset: 2px;
+}
+
+.form-input:focus-visible {
+  outline: none;
+  border-color: #5B9BD5;
+  box-shadow: 0 0 0 3px rgba(91,155,213,0.12);
+}
+
+/* ---------- Page hero (inner pages) ---------- */
+.page-hero {
+  background-color: #0F172A;
+  padding: 120px 0 80px;
+}
+
+/* ---------- Why-us item divider ---------- */
+.why-item + .why-item {
+  border-top: 1px solid #E2E8F0;
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.why-item-dark + .why-item-dark {
+  border-top: 1px solid rgba(91,155,213,0.1);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+/* ---------- Language switcher ---------- */
+[data-lang-btn].active {
+  color: #5B9BD5;
+}
+
+.text-blue { color: #5B9BD5; }
+
+/* ---------- Catalog cover image ---------- */
+.catalog-cover-img {
+  /* Portrait ratio matches a physical catalog cover; contain keeps full cover visible */
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  display: block;
+  width: 100%;
+}
+
+/* ---------- Sector/product card images ---------- */
+/* Wrapper handles clipping, rounding and the hover zoom so the img transform
+   stays contained and corners are always sharp */
+.sector-img-wrap {
+  overflow: hidden;
+  border-radius: 0.5rem;      /* matches rounded-lg */
+  background-color: #E2E8F0;  /* slate-200 placeholder while image loads */
+}
+
+.sector-img {
+  /* 4:3 is taller than 3:2 — gives more visual weight and better balances
+     against the text column (title + description + brand tags + format line) */
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.sector-img-wrap:hover .sector-img {
+  transform: scale(1.04);
+}
+
+/* ---------- Scroll-driven video ---------- */
+#scroll-video-wrapper {
+  position: relative;
+}
+
+#operations-section {
+  will-change: auto;
+}
+
+#ops-content {
+  will-change: opacity, transform;
+}
+
+@media (max-width: 767px) {
+  #navbar {
+    /* Fully opaque on mobile — removing backdrop-filter eliminates a competing GPU
+       compositing layer that can cause visual artifacts with video sections on iOS Safari */
+    background-color: #0F172A !important;
+  }
+
+  #hero-section {
+    min-height: 100svh;
+    overflow: hidden;
+  }
+
+  #hero-content {
+    align-items: flex-start;
+    padding-top: calc(var(--header-height) + var(--safe-area-top) + 2rem);
+    padding-bottom: 3rem;
+  }
+
+  .hero-shell {
+    width: 100%;
+    max-width: 28rem;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 0.875rem;
+    font-size: 0.6875rem;
+  }
+
+  .hero-title {
+    max-width: 11ch;
+    margin-bottom: 1rem;
+    font-size: clamp(2.6rem, 12vw, 4rem);
+    line-height: 0.95;
+  }
+
+  .hero-subheadline {
+    max-width: 22rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-actions .btn-blue,
+  .hero-actions .btn-ghost {
+    width: 100%;
+    padding: 0.95rem 1.25rem;
+  }
+
+  .hero-trust {
+    gap: 0.5rem;
+    max-width: 20rem;
+  }
+
+  .hero-trust span {
+    text-align: center;
+  }
+
+  .hero-trust-dot {
+    display: none;
+  }
+
+  #hero-scroll-indicator {
+    bottom: 1.5rem;
+  }
+
+  /* Inner-page hero: use CSS variable system for consistent navbar clearance */
+  .page-hero {
+    padding-top: calc(var(--header-height) + var(--safe-area-top) + 2rem);
+    padding-bottom: 3rem;
+  }
+}

@@ -1,0 +1,21 @@
+.DS_Store
+.idea/
+*.iml
+.vscode/
+.superpowers/
+.claude/
+.claude.json
+.claude.json.backup
+.copilot/
+.codex/
+.agent-browser/
+.dev-browser/
+.gemini/
+node_modules/
+.vercel/
+*.log
+*.pid
+
+# Source/backup image files — web uses optimized JPGs
+assets/img/*.png
+.vercel

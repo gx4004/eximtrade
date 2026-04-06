@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Eximtrade sp. z o.o. — Międzynarodowa koordynacja handlu i dystrybucja towarów konsumpcyjnych z Białegostoku, Polska. Zaopatrzenie, magazynowanie i dostawy w Europie i Azji." />
+  <title>Eximtrade — Międzynarodowy Handel i Dystrybucja z Polski</title>
+  <link rel="canonical" href="https://eximtrade.eu/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Eximtrade" />
+  <meta property="og:title" content="Eximtrade — Międzynarodowy Handel i Dystrybucja z Polski" />
+  <meta property="og:description" content="Pozyskiwanie, magazynowanie i dostawa towarów konsumpcyjnych FMCG z Polski do Europy i Azji. Koordynacja handlu transgranicznego B2B od 2019." />
+  <meta property="og:url" content="https://eximtrade.eu/" />
+  <meta property="og:image" content="https://eximtrade.eu/assets/img/industries-goods.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blue: { DEFAULT: '#5B9BD5', light: '#DBEAFE', dark: '#1B3A5C' },
+          },
+          fontFamily: {
+            serif: ['"Bodoni Moda"', 'Georgia', 'serif'],
+            sans:  ['"Jost"', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/custom.css" />
+  <script src="js/i18n.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <link rel="icon" href="logo.jpg" type="image/jpeg" />
+</head>
+<body class="font-sans bg-slate-50 text-slate-950 antialiased grain-overlay">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue focus:text-slate-950 focus:px-4 focus:py-2 focus:text-sm focus:font-sans">Skip to main content</a>
+
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-slate-950 lg:bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center cursor-pointer">
+          <img src="logo.jpg" alt="Exim Trade" class="h-10 w-auto" />
+        </a>
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="about.html" class="nav-link text-sm font-sans font-normal tracking-wide cursor-pointer" data-i18n="nav.about">O nas</a>
+          <a href="services.html" class="nav-link text-sm font-sans font-normal tracking-wide cursor-pointer" data-i18n="nav.services">Usługi</a>
+          <a href="industries.html" class="nav-link text-sm font-sans font-normal tracking-wide cursor-pointer" data-i18n="nav.products">Sektory</a>
+          <a href="markets.html" class="nav-link text-sm font-sans font-normal tracking-wide cursor-pointer" data-i18n="nav.markets">Rynki</a>
+          <a href="contact.html" class="nav-link text-sm font-sans font-normal tracking-wide cursor-pointer" data-i18n="nav.contact">Kontakt</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="hidden lg:inline-flex btn-blue px-5 py-2.5 text-sm rounded-none cursor-pointer" data-i18n="nav.cta">Skontaktuj się</a>
+          <div class="hidden lg:flex items-center gap-1 ml-3 border-l border-slate-700 pl-3">
+            <button data-lang-btn="pl" onclick="I18N.switchTo('pl')" class="text-xs font-sans text-slate-400 hover:text-blue px-1.5 py-1 transition-colors cursor-pointer">PL</button>
+            <button data-lang-btn="en" onclick="I18N.switchTo('en')" class="text-xs font-sans text-slate-400 hover:text-blue px-1.5 py-1 transition-colors cursor-pointer">EN</button>
+            <button data-lang-btn="de" onclick="I18N.switchTo('de')" class="text-xs font-sans text-slate-400 hover:text-blue px-1.5 py-1 transition-colors cursor-pointer">DE</button>
+            <button data-lang-btn="ru" onclick="I18N.switchTo('ru')" class="text-xs font-sans text-slate-400 hover:text-blue px-1.5 py-1 transition-colors cursor-pointer">RU</button>
+          </div>
+          <button id="hamburger" class="lg:hidden p-2 cursor-pointer" aria-label="Open menu" data-i18n-aria="nav.menu_label">
+            <svg class="w-6 h-6 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden bg-slate-900 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col gap-1">
+        <div class="flex items-center gap-2 pb-3 mb-2 border-b border-slate-800">
+          <button data-lang-btn="pl" onclick="I18N.switchTo('pl')" class="text-xs font-sans text-slate-400 hover:text-blue px-2 py-1.5 transition-colors cursor-pointer">PL</button>
+          <button data-lang-btn="en" onclick="I18N.switchTo('en')" class="text-xs font-sans text-slate-400 hover:text-blue px-2 py-1.5 transition-colors cursor-pointer">EN</button>
+          <button data-lang-btn="de" onclick="I18N.switchTo('de')" class="text-xs font-sans text-slate-400 hover:text-blue px-2 py-1.5 transition-colors cursor-pointer">DE</button>
+          <button data-lang-btn="ru" onclick="I18N.switchTo('ru')" class="text-xs font-sans text-slate-400 hover:text-blue px-2 py-1.5 transition-colors cursor-pointer">RU</button>
+        </div>
+        <a href="about.html" class="py-3 text-sm font-sans text-slate-300 border-b border-slate-800 cursor-pointer" data-i18n="nav.about">O nas</a>
+        <a href="services.html" class="py-3 text-sm font-sans text-slate-300 border-b border-slate-800 cursor-pointer" data-i18n="nav.services">Usługi</a>
+        <a href="industries.html" class="py-3 text-sm font-sans text-slate-300 border-b border-slate-800 cursor-pointer" data-i18n="nav.products">Sektory</a>
+        <a href="markets.html" class="py-3 text-sm font-sans text-slate-300 border-b border-slate-800 cursor-pointer" data-i18n="nav.markets">Rynki</a>
+        <a href="contact.html" class="py-3 text-sm font-sans text-slate-300 cursor-pointer" data-i18n="nav.contact">Kontakt</a>
+        <a href="contact.html" class="mt-4 btn-blue px-5 py-3 text-sm text-center cursor-pointer" data-i18n="nav.cta">Skontaktuj się</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero-section" class="relative" style="background-color:#0F172A; clip-path:inset(0);">
+    <video id="hero-video" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" poster="assets/video/operations-poster.jpg">
+      <source src="assets/video/operations.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Layered dark overlays for text readability -->
+    <div class="absolute inset-0 z-[1]" style="background:linear-gradient(180deg, rgba(15,23,42,0.45) 0%, rgba(15,23,42,0.25) 40%, rgba(15,23,42,0.5) 100%);"></div>
+    <div class="absolute inset-0 z-[1]" style="background:radial-gradient(ellipse at center, transparent 30%, rgba(15,23,42,0.5) 100%);"></div>
+    <!-- Bottom gradient: fades to dark for seamless join -->
+    <div class="absolute inset-x-0 bottom-0 z-[2]" style="height:14rem; background:linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.7) 50%, rgba(15,23,42,1) 100%);"></div>
+
+    <div id="hero-content" class="absolute inset-0 z-[3] flex items-center justify-center">
+      <div class="hero-shell mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="hero-eyebrow text-slate-300 text-xs font-sans font-normal tracking-[0.2em] uppercase fade-up" style="text-shadow:0 1px 8px rgba(0,0,0,0.6);" data-i18n="home.eyebrow">Eximtrade · Białystok, Polska</p>
+        <h1 class="hero-title font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold text-white leading-tight fade-up" style="transition-delay:0.1s; text-shadow:0 4px 40px rgba(0,0,0,0.9), 0 0 120px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.8);" data-i18n-html="home.headline_html">
+          Handel FMCG, <em class="not-italic text-blue" style="text-shadow:0 4px 40px rgba(91,155,213,0.4), 0 0 120px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.8);">zorganizowany od zakupu do dostawy.</em>
+        </h1>
+        <p class="hero-subheadline font-sans font-light text-lg sm:text-xl text-white/90 leading-relaxed fade-up" style="transition-delay:0.2s; text-shadow:0 2px 24px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.5);" data-i18n="home.subheadline">
+          Pozyskanie, magazynowanie i dostawa w jednym, spokojnie prowadzonym modelu B2B.
+        </p>
+        <div class="hero-actions flex flex-col sm:flex-row justify-center gap-4 fade-up" style="transition-delay:0.3s">
+          <a href="contact.html" class="btn-blue px-8 py-4 text-sm cursor-pointer inline-block text-center" data-i18n="home.cta_primary">Zapytaj o ofertę</a>
+          <a href="services.html" class="btn-ghost px-8 py-4 text-sm cursor-pointer inline-block text-center" style="background:rgba(0,0,0,0.45); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-color:rgba(255,255,255,0.3);" data-i18n="home.cta_secondary">Poznaj nasze usługi →</a>
+        </div>
+        <div class="hero-trust flex flex-wrap items-center justify-center gap-x-6 gap-y-2 fade-up" style="transition-delay:0.4s">
+          <span class="text-xs font-sans font-light text-white/70 tracking-wider" style="text-shadow:0 1px 10px rgba(0,0,0,0.8);" data-i18n="home.trust_1">Operacje magazynowe w Białymstoku</span>
+          <span class="hero-trust-dot">·</span>
+          <span class="text-xs font-sans font-light text-white/70 tracking-wider" style="text-shadow:0 1px 10px rgba(0,0,0,0.8);" data-i18n="home.trust_2">Dokumentacja celna i eksportowa</span>
+          <span class="hero-trust-dot">·</span>
+          <span class="text-xs font-sans font-light text-white/70 tracking-wider" style="text-shadow:0 1px 10px rgba(0,0,0,0.8);" data-i18n="home.trust_3">Zespół w 7 językach</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="hero-scroll-indicator" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 z-[5]">
+      <span class="text-xs font-sans text-slate-400 tracking-widest uppercase" style="text-shadow:0 1px 6px rgba(0,0,0,0.8);" data-i18n="home.scroll_label">Przewiń</span>
+      <div class="w-px h-12 bg-slate-500 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1/2 bg-blue animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCROLL-DRIVEN COMPANY VIDEO SECTION ===== -->
+  <div id="scroll-video-wrapper" style="height:300vh; position:relative;">
+    <section id="company-section" class="overflow-hidden" style="position:sticky; top:0; height:100vh; background-color:#0F172A;">
+      <video id="company-video" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="metadata" poster="assets/video/eximtrademain1-poster.jpg">
+        <source src="assets/video/eximtrademain1.mp4" type="video/mp4" />
+      </video>
+
+      <div class="absolute inset-0 z-[1]" style="background:linear-gradient(180deg, rgba(15,23,42,0.5) 0%, rgba(15,23,42,0.25) 40%, rgba(15,23,42,0.5) 100%);"></div>
+      <div class="absolute inset-0 z-[1]" style="background:radial-gradient(ellipse at center, transparent 30%, rgba(15,23,42,0.45) 100%);"></div>
+
+      <div class="absolute inset-x-0 top-0 z-[2]" style="height:10rem; background:linear-gradient(180deg, rgba(15,23,42,1) 0%, rgba(15,23,42,0) 100%);"></div>
+      <div class="absolute inset-x-0 bottom-0 z-[2]" style="height:14rem; background:linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.8) 50%, rgba(15,23,42,1) 100%);"></div>
+
+      <div id="scroll-content" class="absolute inset-0 z-[3] flex items-center justify-center" style="opacity:0; will-change:opacity,transform;">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p class="text-slate-300 text-xs font-sans font-normal tracking-[0.2em] uppercase mb-6" style="text-shadow:0 1px 8px rgba(0,0,0,0.6);" data-i18n="home.credibility_label">Jak działamy</p>
+          <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight mb-8" style="text-shadow:0 4px 40px rgba(0,0,0,0.9), 0 0 120px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.8);" data-i18n-html="home.credibility_heading_html">Zorganizowana <em class="not-italic text-blue" style="text-shadow:0 4px 40px rgba(91,155,213,0.4), 0 0 120px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.8);">koordynacja handlu międzynarodowego.</em></h2>
+          <p class="font-sans font-light text-lg sm:text-xl text-white/85 leading-relaxed max-w-2xl mx-auto" style="text-shadow:0 2px 24px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.5);" data-i18n="home.credibility_desc">Koordynujemy kolejne etapy handlu transgranicznego — od rozpoznania potrzeb zakupowych i uzgodnień handlowych po dokumentację, przygotowanie wysyłki i organizację dostawy.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Dark-to-light bridge -->
+  <div style="height:5rem; background:linear-gradient(180deg, #0F172A 0%, #F7F8FA 100%);"></div>
+
+  <!-- Stats bar: compact, factual -->
+  <section class="bg-slate-50 py-12 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-slate-200">
+        <div class="text-center fade-up">
+          <p class="stat-number text-3xl sm:text-4xl font-serif font-semibold text-slate-900" data-i18n="home.stats_1_value">2019</p>
+          <p class="text-xs font-sans font-light text-slate-400 tracking-widest uppercase mt-2" data-i18n="home.stats_1_label">Rok założenia</p>
+        </div>
+        <div class="text-center lg:pl-8 fade-up" style="transition-delay:0.1s">
+          <p class="stat-number text-3xl sm:text-4xl font-serif font-semibold text-slate-900" data-i18n="home.stats_2_value" data-count-to="7">7</p>
+          <p class="text-xs font-sans font-light text-slate-400 tracking-widest uppercase mt-2" data-i18n="home.stats_2_label">Języków</p>
+        </div>
+        <div class="text-center lg:pl-8 fade-up" style="transition-delay:0.2s">
+          <p class="text-xl sm:text-2xl font-serif font-semibold text-slate-900" data-i18n="home.stats_3_value">Europa i Azja</p>
+          <p class="text-xs font-sans font-light text-slate-400 tracking-widest uppercase mt-2" data-i18n="home.stats_3_label">Zasięg rynkowy</p>
+        </div>
+        <div class="text-center lg:pl-8 fade-up" style="transition-delay:0.3s">
+          <p class="text-xl sm:text-2xl font-serif font-semibold text-slate-900" data-i18n="home.stats_4_value">Białystok, PL</p>
+          <p class="text-xs font-sans font-light text-slate-400 tracking-widest uppercase mt-2" data-i18n="home.stats_4_label">Magazyn i siedziba</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="bg-slate-50 py-20 lg:py-28 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
+        <div class="lg:col-span-4 fade-up">
+          <p class="text-blue text-xs font-sans font-light tracking-[0.2em] uppercase mb-4" data-i18n="home.services_label">Co robimy</p>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight" data-i18n="home.services_heading">Kompleksowe rozwiązania handlowe</h2>
+          <p class="font-sans font-light text-slate-500 text-base mt-6 leading-relaxed" data-i18n="home.services_subheading">Wszystkie usługi potrzebne do globalnego handlu, w jednym miejscu.</p>
+          <a href="services.html" class="inline-flex items-center gap-2 text-slate-700 text-sm font-sans font-light tracking-wide hover:text-blue hover:gap-3 transition-all duration-200 mt-8 cursor-pointer" data-i18n="home.services_cta">Zobacz wszystkie usługi</a>
+          <img src="assets/img/capabilities-warehouse.jpg" alt="Warehouse interior with palletized consumer goods" class="mt-10 w-full object-cover hidden lg:block" style="aspect-ratio:16/10; filter:brightness(0.95) saturate(0.9);" loading="lazy" />
+        </div>
+        <div class="lg:col-span-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-slate-200">
+            <div class="bg-slate-50 p-8 fade-up">
+              <h3 class="font-serif text-lg font-medium text-slate-900 mb-2" data-i18n="home.svc_1_title">Rozwiązania eksportowe</h3>
+              <p class="font-sans font-light text-slate-500 text-sm leading-relaxed" data-i18n="home.svc_1_desc">Koordynujemy projekty eksportowe i importowe w ustalonym zakresie — dokumentację, etykietowanie na rynki docelowe, odprawę celną i organizację frachtu.</p>
+            </div>
+            <div class="bg-slate-50 p-8 fade-up" style="transition-delay:0.05s">
+              <h3 class="font-serif text-lg font-medium text-slate-900 mb-2" data-i18n="home.svc_2_title">Sourcing i zaopatrzenie</h3>
+              <p class="font-sans font-light text-slate-500 text-sm leading-relaxed" data-i18n="home.svc_2_desc">Identyfikujemy i weryfikujemy dostawców na rynkach europejskich, negocjujemy warunki handlowe i zabezpieczamy produkty zgodne z Twoimi specyfikacjami i wolumenami.</p>
+            </div>
+            <div class="bg-slate-50 p-8 fade-up" style="transition-delay:0.1s">
+              <h3 class="font-serif text-lg font-medium text-slate-900 mb-2" data-i18n="home.svc_3_title">Magazynowanie i przechowywanie</h3>
+              <p class="font-sans font-light text-slate-500 text-sm leading-relaxed" data-i18n="home.svc_3_desc">Nasz magazyn w Białymstoku obsługuje przyjęcia, zarządzanie zapasami, konsolidację ładunków od wielu dostawców, etykietowanie produktów i wysyłkę.</p>
+            </div>
+            <div class="bg-slate-50 p-8 fade-up" style="transition-delay:0.15s">
+              <h3 class="font-serif text-lg font-medium text-slate-900 mb-2" data-i18n="home.svc_4_title">Koordynacja logistyczna</h3>
+              <p class="font-sans font-light text-slate-500 text-sm leading-relaxed" data-i18n="home.svc_4_desc">Transport drogowy w Polsce i Europie. Zarządzamy konsolidacją, trasowaniem, dokumentacją transportową i dostawą do magazynu, centrum dystrybucji lub punktu sprzedaży.</p>
+            </div>
+            <div class="bg-slate-50 p-8 fade-up" style="transition-delay:0.2s">
+              <h3 class="font-serif text-lg font-medium text-slate-900 mb-2" data-i18n="home.svc_5_title">Cło i zgodność handlowa</h3>
+              <p class="font-sans font-light text-slate-500 text-sm leading-relaxed" data-i18n="home.svc_5_desc">Klasyfikacja taryfowa, zarządzanie cłami, zgodność regulacyjna i pełna dokumentacja celna dla handlu transgranicznego w UE i poza nią.</p>
+            </div>
+            <div class="bg-slate-50 p-8 fade-up" style="transition-delay:0.25s">
+              <h3 class="font-serif text-lg font-medium text-slate-900 mb-2" data-i18n="home.svc_6_title">Dokumentacja eksportowa i etykietowanie</h3>
+              <p class="font-sans font-light text-slate-500 text-sm leading-relaxed" data-i18n="home.svc_6_desc">Kompletna dokumentacja eksportowa, świadectwa pochodzenia i etykietowanie produktów dostosowane do języka i wymogów regulacyjnych rynku docelowego.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative bg-slate-900 py-20 lg:py-28 overflow-hidden">
+    <img src="assets/img/trade-port.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-[0.08]" loading="lazy" />
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div class="fade-up">
+          <p class="text-blue text-xs font-sans font-light tracking-[0.2em] uppercase mb-4" data-i18n="home.why_label">Dlaczego Exim Trade</p>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-slate-50 leading-tight" data-i18n="home.why_heading">Standard handlu międzynarodowego.</h2>
+          <p class="font-sans font-light text-slate-400 text-base mt-8 leading-relaxed" data-i18n="home.why_subheading">Wspieramy partnerów B2B w organizacji zakupu, dokumentacji, przygotowania dostaw i komunikacji handlowej od pierwszego zapytania do ustaleń operacyjnych.</p>
+          <a href="about.html" class="inline-flex items-center gap-2 text-slate-300 text-sm font-sans font-light tracking-wide hover:text-blue hover:gap-3 transition-all duration-200 mt-8 cursor-pointer" data-i18n="home.why_cta">Dowiedz się więcej o naszej firmie</a>
+        </div>
+        <div class="fade-up" style="transition-delay:0.15s">
+          <div class="why-item-dark">
+            <h3 class="font-serif text-lg font-medium text-slate-100 mb-2" data-i18n="home.why_1_title">Wielojęzyczny zespół, europejskie doświadczenie</h3>
+            <p class="font-sans font-light text-slate-400 text-sm leading-relaxed" data-i18n="home.why_1_desc">Nasz zespół pracuje po polsku, rosyjsku, angielsku, hiszpańsku, francusku, niemiecku i ukraińsku — usuwając bariery językowe w handlu transgranicznym.</p>
+          </div>
+          <div class="why-item-dark">
+            <h3 class="font-serif text-lg font-medium text-slate-100 mb-2" data-i18n="home.why_2_title">Zweryfikowani. Zgodnie z przepisami. Niezawodni.</h3>
+            <p class="font-sans font-light text-slate-400 text-sm leading-relaxed" data-i18n="home.why_2_desc">Pracujemy na uporządkowanej dokumentacji handlowej i każdorazowo potwierdzamy warunki współpracy, zakres dostawy oraz wymagania formalne dla danego zlecenia.</p>
+          </div>
+          <div class="why-item-dark">
+            <h3 class="font-serif text-lg font-medium text-slate-100 mb-2" data-i18n="home.why_3_title">Jeden partner. Pełne możliwości.</h3>
+            <p class="font-sans font-light text-slate-400 text-sm leading-relaxed" data-i18n="home.why_3_desc">Współpracujesz z jednym zespołem w zakresie zaopatrzenia, magazynowania, dokumentacji i dostaw. Bez fragmentarycznej koordynacji, bez luk między dostawcami usług.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trade Categories — capability framing, not catalog -->
+  <section class="bg-slate-50 py-20 lg:py-28 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 mb-14">
+        <div class="lg:col-span-5 fade-up">
+          <p class="text-blue text-xs font-sans font-light tracking-[0.2em] uppercase mb-4" data-i18n="home.products_label">Sektory handlowe</p>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight" data-i18n="home.products_heading">Sektory, w których działamy</h2>
+          <p class="font-sans font-light text-slate-500 text-base mt-6 leading-relaxed" data-i18n="home.products_subheading">Nasze operacje handlowe obejmują trzy główne sektory towarów konsumpcyjnych. Zajmujemy się zaopatrzeniem, zgodnością i dostawą — Ty skupiasz się na swoim rynku.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-px bg-slate-200 fade-up" style="transition-delay:0.1s">
+        <a href="industries.html" class="bg-slate-50 p-8 lg:p-10 block group hover:bg-white transition-colors duration-200">
+          <p class="text-blue text-xs font-sans font-light tracking-[0.15em] uppercase mb-4">01</p>
+          <h3 class="font-serif text-xl font-medium text-slate-900 mb-2" data-i18n="home.product_tag_1">Żywność i napoje</h3>
+          <p class="font-sans font-light text-slate-500 text-sm leading-relaxed mb-5" data-i18n="home.product_card_desc_1">Wyroby cukiernicze, napoje, przekąski, kawa, herbata i żywność długoterminowa od europejskich producentów.</p>
+          <span class="text-blue text-xs font-sans font-light tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-200" data-i18n="home.product_card_cta">Odkryj →</span>
+        </a>
+        <a href="industries.html" class="bg-slate-50 p-8 lg:p-10 block group hover:bg-white transition-colors duration-200">
+          <p class="text-blue text-xs font-sans font-light tracking-[0.15em] uppercase mb-4">02</p>
+          <h3 class="font-serif text-xl font-medium text-slate-900 mb-2" data-i18n="home.product_tag_2">Kosmetyki i higiena osobista</h3>
+          <p class="font-sans font-light text-slate-500 text-sm leading-relaxed mb-5" data-i18n="home.product_card_desc_2">Pielęgnacja skóry, włosów, higiena jamy ustnej i zapachy od uznanych marek z pełną zgodnością rynkową.</p>
+          <span class="text-blue text-xs font-sans font-light tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-200" data-i18n="home.product_card_cta">Odkryj →</span>
+        </a>
+        <a href="industries.html" class="bg-slate-50 p-8 lg:p-10 block group hover:bg-white transition-colors duration-200">
+          <p class="text-blue text-xs font-sans font-light tracking-[0.15em] uppercase mb-4">03</p>
+          <h3 class="font-serif text-xl font-medium text-slate-900 mb-2" data-i18n="home.product_tag_3">Chemia i higiena</h3>
+          <p class="font-sans font-light text-slate-500 text-sm leading-relaxed mb-5" data-i18n="home.product_card_desc_3">Detergenty, środki czystości, dezynfekcyjne, do prania, artykuły papiernicze i sanitarne dla kanałów detalicznych i profesjonalnych.</p>
+          <span class="text-blue text-xs font-sans font-light tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-200" data-i18n="home.product_card_cta">Odkryj →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trade Geography — inline compact, not 3 equal cards -->
+  <section class="bg-slate-50 py-16 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-4 fade-up">
+          <p class="text-blue text-xs font-sans font-light tracking-[0.2em] uppercase mb-4" data-i18n="home.network_label">Nasz zasięg</p>
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-slate-900 leading-tight" data-i18n="home.network_heading">Nasz zasięg rynkowy</h2>
+          <p class="font-sans font-light text-slate-500 text-sm mt-4 leading-relaxed" data-i18n="home.network_subheading">Działając z Polski, wspieramy projekty handlowe FMCG w Europie oraz rozwijamy wybrane relacje biznesowe na kierunkach azjatyckich.</p>
+        </div>
+        <div class="lg:col-span-8 fade-up" style="transition-delay:0.1s">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div>
+              <h3 class="font-serif text-base font-medium text-slate-900 mb-2" data-i18n="home.region_1_title">Polska i Europa Środkowa</h3>
+              <p class="font-sans font-light text-slate-400 text-xs leading-relaxed tracking-wide" data-i18n="home.region_1_countries">Polska · Litwa · Czechy · Słowacja · Niemcy</p>
+            </div>
+            <div>
+              <h3 class="font-serif text-base font-medium text-slate-900 mb-2" data-i18n="home.region_2_title">Europa Zachodnia</h3>
+              <p class="font-sans font-light text-slate-400 text-xs leading-relaxed tracking-wide" data-i18n="home.region_2_countries">Francja · Hiszpania · Włochy · Holandia · Belgia · Wielka Brytania</p>
+            </div>
+            <div>
+              <h3 class="font-serif text-base font-medium text-slate-900 mb-2" data-i18n="home.region_3_title">Azja (rozwój)</h3>
+              <p class="font-sans font-light text-slate-400 text-xs leading-relaxed tracking-wide" data-i18n="home.region_3_countries">Rozwijane relacje handlowe i projekty sourcingowe, zależnie od rynku oraz dostępności produktów.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Light-to-dark bridge into operations video -->
+  <div style="height:5rem; background:linear-gradient(180deg, #F7F8FA 0%, #0F172A 100%);"></div>
+
+  <!-- ===== OPERATIONS VIDEO SECTION (normal autoplay) ===== -->
+  <section id="operations-section" class="relative min-h-[100dvh] overflow-hidden" style="background-color:#0F172A;">
+    <video id="operations-video" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="metadata" poster="assets/video/hero-poster.jpg">
+      <source src="assets/video/hero.mp4" type="video/mp4" />
+    </video>
+
+    <div class="absolute inset-0 z-[1]" style="background:linear-gradient(180deg, rgba(15,23,42,0.5) 0%, rgba(15,23,42,0.25) 40%, rgba(15,23,42,0.5) 100%);"></div>
+    <div class="absolute inset-0 z-[1]" style="background:radial-gradient(ellipse at center, transparent 25%, rgba(15,23,42,0.45) 100%);"></div>
+
+    <div class="absolute inset-x-0 top-0 z-[2]" style="height:10rem; background:linear-gradient(180deg, rgba(15,23,42,1) 0%, rgba(15,23,42,0) 100%);"></div>
+    <div class="absolute inset-x-0 bottom-0 z-[2]" style="height:14rem; background:linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.8) 50%, rgba(15,23,42,1) 100%);"></div>
+
+    <div class="absolute inset-0 z-[3] flex items-center justify-center">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-slate-300 text-xs font-sans font-normal tracking-[0.2em] uppercase mb-6 fade-up" style="text-shadow:0 1px 8px rgba(0,0,0,0.6);" data-i18n="home.ops_eyebrow">Doskonałość operacyjna</p>
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight mb-8 fade-up" style="transition-delay:0.1s; text-shadow:0 4px 40px rgba(0,0,0,0.9), 0 0 120px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.8);" data-i18n-html="home.ops_headline_html">
+          Zaopatrzenie. Magazynowanie. <em class="not-italic text-blue" style="text-shadow:0 4px 40px rgba(91,155,213,0.4), 0 0 120px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.8);">Dostawa.</em>
+        </h2>
+        <p class="font-sans font-light text-lg sm:text-xl text-white/85 leading-relaxed max-w-2xl mx-auto mb-12 fade-up" style="transition-delay:0.2s; text-shadow:0 2px 24px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.5);" data-i18n="home.ops_subheadline">
+          Konsolidujemy towary w naszym magazynie w Białymstoku, obsługujemy pełną dokumentację eksportową i etykietowanie oraz koordynujemy fracht przez granice UE.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 fade-up" style="transition-delay:0.3s">
+          <div class="text-center">
+            <p class="font-serif text-2xl font-semibold text-white" style="text-shadow:0 2px 16px rgba(0,0,0,0.8);" data-i18n="home.ops_metric_1_value">Białystok</p>
+            <p class="text-xs font-sans font-light text-white/50 tracking-wider uppercase mt-1" style="text-shadow:0 1px 8px rgba(0,0,0,0.8);" data-i18n="home.ops_metric_1_label">Baza magazynowa</p>
+          </div>
+          <div class="w-px h-8 bg-white/15 hidden sm:block"></div>
+          <div class="text-center">
+            <p class="font-serif text-2xl font-semibold text-white" style="text-shadow:0 2px 16px rgba(0,0,0,0.8);" data-i18n="home.ops_metric_2_value">EU + Asia</p>
+            <p class="text-xs font-sans font-light text-white/50 tracking-wider uppercase mt-1" style="text-shadow:0 1px 8px rgba(0,0,0,0.8);" data-i18n="home.ops_metric_2_label">Szlaki handlowe</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark-to-light bridge after operations video -->
+  <div style="height:5rem; background:linear-gradient(180deg, #0F172A 0%, #F7F8FA 100%);"></div>
+
+  <!-- Process — compact horizontal -->
+  <section class="bg-slate-50 py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start mb-14">
+        <div class="lg:col-span-5 fade-up">
+          <p class="text-blue text-xs font-sans font-light tracking-[0.2em] uppercase mb-4" data-i18n="home.process_label">Nasz proces</p>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight" data-i18n="home.process_heading">Jak pracujemy</h2>
+          <p class="font-sans font-light text-slate-500 text-base mt-6 leading-relaxed" data-i18n="home.process_subheading">Uporządkowany proces od pierwszej rozmowy do potwierdzonej dostawy.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
+        <div class="relative lg:pr-8 fade-up">
+          <p class="text-blue text-xs font-sans font-light tracking-[0.15em] uppercase mb-3">01</p>
+          <h3 class="font-serif text-lg font-medium text-slate-900 mb-2" data-i18n="home.step_1_title">Konsultacja</h3>
+          <p class="font-sans font-light text-slate-500 text-sm leading-relaxed" data-i18n="home.step_1_desc">Oceniamy Twoje potrzeby handlowe, rynki docelowe, specyfikacje produktów i cele komercyjne.</p>
+        </div>
+        <div class="relative lg:px-8 lg:border-l lg:border-slate-200 fade-up" style="transition-delay:0.1s">
+          <p class="text-blue text-xs font-sans font-light tracking-[0.15em] uppercase mb-3">02</p>
+          <h3 class="font-serif text-lg font-medium text-slate-900 mb-2" data-i18n="home.step_2_title">Sourcing i badanie rynku</h3>
+          <p class="font-sans font-light text-slate-500 text-sm leading-relaxed" data-i18n="home.step_2_desc">Nasz zespół identyfikuje dostawców i produkty odpowiadające Twoim wymaganiom, wolumenom i standardom jakości.</p>
+        </div>
+        <div class="relative lg:px-8 lg:border-l lg:border-slate-200 fade-up" style="transition-delay:0.2s">
+          <p class="text-blue text-xs font-sans font-light tracking-[0.15em] uppercase mb-3">03</p>
+          <h3 class="font-serif text-lg font-medium text-slate-900 mb-2" data-i18n="home.step_3_title">Strukturyzacja i zgodność</h3>
+          <p class="font-sans font-light text-slate-500 text-sm leading-relaxed" data-i18n="home.step_3_desc">Zajmujemy się warunkami handlowymi, dokumentacją, etykietowaniem i zgodnością regulacyjną transakcji.</p>
+        </div>
+        <div class="relative lg:pl-8 lg:border-l lg:border-slate-200 fade-up" style="transition-delay:0.3s">
+          <p class="text-blue text-xs font-sans font-light tracking-[0.15em] uppercase mb-3">04</p>
+          <h3 class="font-serif text-lg font-medium text-slate-900 mb-2" data-i18n="home.step_4_title">Realizacja i dostawa</h3>
+          <p class="font-sans font-light text-slate-500 text-sm leading-relaxed" data-i18n="home.step_4_desc">Rezerwacja frachtu, odprawa celna i koordynacja dostaw — zarządzane przez nasz zespół zgodnie z ustalonym zakresem współpracy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA — restrained, dark, not screaming blue -->
+  <section class="bg-slate-900 py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-up">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-slate-50 leading-tight mb-4" data-i18n="home.cta_banner_heading">Gotowy do współpracy?</h2>
+        <p class="font-sans font-light text-slate-400 text-base mb-10" data-i18n="home.cta_banner_desc">Powiedz nam, czego potrzebujesz — zaopatrzenia, magazynowania lub dostawy. Nasz zespół odpowiada w ciągu jednego dnia roboczego.</p>
+        <a href="contact.html" class="btn-blue px-10 py-4 text-sm inline-block cursor-pointer" data-i18n="home.cta_banner_btn">Skontaktuj się z nami →</a>
+        <p class="font-sans font-light text-slate-500 text-xs tracking-wider mt-6">eximtrade777@gmail.com · Białystok, Polska</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-950 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        <div>
+          <img src="logo.jpg" alt="Exim Trade" class="h-8 w-auto mb-2" />
+          <p class="font-sans font-light text-slate-500 text-xs tracking-wider mb-6" data-i18n="footer.tagline">Międzynarodowy handel i dystrybucja</p>
+          <p class="font-sans font-light text-slate-500 text-xs leading-relaxed max-w-[220px]" data-i18n="footer.description">Handel i dystrybucja towarów konsumpcyjnych z Polski do Europy i Azji. Od 2019 roku.</p>
+        </div>
+        <div>
+          <h4 class="text-xs font-sans font-light text-slate-400 tracking-[0.2em] uppercase mb-5" data-i18n="footer.company_heading">Firma</h4>
+          <ul class="space-y-3">
+            <li><a href="about.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.about">O nas</a></li>
+            <li><a href="services.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.services">Usługi</a></li>
+            <li><a href="industries.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.products">Sektory</a></li>
+            <li><a href="markets.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.markets">Rynki</a></li>
+            <li><a href="contact.html" class="text-xs font-sans font-light text-slate-500 hover:text-slate-200 transition-colors duration-200 cursor-pointer" data-i18n="footer.contact_link">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-sans font-light text-slate-400 tracking-[0.2em] uppercase mb-5" data-i18n="footer.details_heading">Dane firmy</h4>
+          <div class="space-y-3 text-xs font-sans font-light text-slate-500">
+            <p><span class="text-slate-400" data-i18n="footer.company_label">Podmiot</span><br />EXIMTRADE sp. z o.o.</p>
+            <p><span class="text-slate-400" data-i18n="footer.address_label">Adres do kontaktu</span><br />Gen. Gustawa Orlicz-Dreszera 1<br />Lokal 6<br />15-797 Białystok, Polska</p>
+            <p><span class="text-slate-400" data-i18n="footer.id_label">Identyfikatory</span><br />NIP 5423384565<br />REGON 384888982<br />KRS 0000814328</p>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-sans font-light text-slate-400 tracking-[0.2em] uppercase mb-5" data-i18n="footer.contact_heading">Kontakt</h4>
+          <ul class="space-y-3">
+            <li><a href="mailto:eximtrade777@gmail.com" class="text-xs font-sans font-light text-slate-500 hover:text-blue transition-colors duration-200 cursor-pointer" data-i18n="footer.email">eximtrade777@gmail.com</a></li>
+            <li><p class="text-xs font-sans font-light text-slate-500" data-i18n="footer.location">Białystok, Polska</p></li>
+            <li class="pt-2"><a href="contact.html" class="inline-block border border-blue text-blue text-xs font-sans font-light px-4 py-2.5 hover:bg-blue hover:text-slate-950 transition-all duration-200 cursor-pointer" data-i18n="footer.send_inquiry">Wyślij zapytanie</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs font-sans font-light text-slate-600" data-i18n="footer.copyright">&copy; 2026 Exim Trade. Wszelkie prawa zastrzeżone.</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy.html" class="text-xs font-sans font-light text-slate-600 hover:text-slate-400 transition-colors duration-200 cursor-pointer" data-i18n="footer.privacy">Polityka prywatności</a>
+          <a href="cookies.html" class="text-xs font-sans font-light text-slate-600 hover:text-slate-400 transition-colors duration-200 cursor-pointer">Polityka cookies</a>
+          <a href="terms.html" class="text-xs font-sans font-light text-slate-600 hover:text-slate-400 transition-colors duration-200 cursor-pointer" data-i18n="footer.terms">Warunki korzystania</a>
+        </div>
+      </div>
+      <div class="pt-6 space-y-2">
+        <p class="text-xs font-sans font-light text-slate-600 max-w-4xl" data-i18n="footer.notice">Informacje na stronie mają charakter informacyjny i nie stanowią oferty w rozumieniu Kodeksu cywilnego, chyba że wyraźnie wskazano inaczej.</p>
+        <p class="text-xs font-sans font-light text-slate-600 max-w-4xl" data-i18n="footer.trademarks">Nazwy marek i znaki towarowe należą do ich właścicieli i są prezentowane wyłącznie w zakresie informacyjnym.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => observer.observe(el));
+    document.querySelectorAll('#hero-content .fade-up').forEach(el => setTimeout(() => el.classList.add('visible'), 100));
+
+    /* --- Hero: subtle parallax fade on scroll --- */
+    (() => {
+      const heroContent = document.getElementById('hero-content');
+      const scrollInd = document.getElementById('hero-scroll-indicator');
+      if (!heroContent) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const mobileMotionDisabled = window.matchMedia('(max-width: 767px), (hover: none) and (pointer: coarse)').matches;
+      if (mobileMotionDisabled) {
+        heroContent.style.opacity = '1';
+        heroContent.style.transform = 'none';
+        if (scrollInd) scrollInd.style.opacity = '0.4';
+        return;
+      }
+
+      const onScroll = () => {
+        const vh = window.innerHeight;
+        const p = Math.min(window.scrollY / (vh * 0.6), 1);
+        heroContent.style.opacity = 1 - p;
+        heroContent.style.transform = `translate3d(0, ${p * -18}px, 0)`;
+        if (scrollInd) scrollInd.style.opacity = (1 - p) * 0.4;
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>
