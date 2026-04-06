@@ -11,6 +11,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
   --header-height: 5rem;
   --safe-area-top: env(safe-area-inset-top, 0px);
 }
@@ -31,6 +32,9 @@ body {
 
 /* ---------- Navbar scroll transition ---------- */
 #navbar {
+  /* Explicit position for iOS Safari — don't rely solely on Tailwind class */
+  position: fixed;
+  width: 100%;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
   /* iOS Safari: force highest GPU layer so fixed nav always renders above video sections */
   -webkit-transform: translate3d(0, 0, 0);
@@ -39,7 +43,8 @@ body {
   backface-visibility: hidden;
   isolation: isolate;
   padding-top: var(--safe-area-top);
-  z-index: 9999 !important;
+  /* Raised above grain-overlay::after (z-index: 1000) to win compositing order */
+  z-index: 10000 !important;
 }
 #navbar.scrolled {
   background-color: #0F172A !important;
@@ -63,19 +68,20 @@ body {
 #company-section,
 #operations-section {
   background-color: #0F172A;
-  /* clip-path used instead of overflow:hidden to avoid iOS Safari GPU layer bug */
+  /* clip-path + overflow:hidden belt-and-suspenders for iOS Safari video containment */
+  overflow: hidden;
   clip-path: inset(0);
   isolation: isolate;
   contain: paint;
 }
 
-/* Ensure videos stay clipped to their section on all browsers */
+/* Ensure videos stay clipped to their section on all browsers.
+   No transform: translateZ(0) — GPU promotion here competes with the fixed navbar
+   on iOS Safari. The parent section's clip-path + overflow:hidden handles containment. */
 #hero-video,
 #company-video,
 #operations-video {
   will-change: auto;
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
 #hero-content {
@@ -132,7 +138,8 @@ body {
   content: '';
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  /* Lowered from 9999 — must stay below navbar (10000). Grain is decorative only. */
+  z-index: 1000;
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   background-repeat: repeat;
@@ -381,13 +388,14 @@ body.page-visible {
 
 @media (max-width: 767px) {
   #navbar {
-    background-color: rgba(15,23,42,0.94) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    /* Fully opaque on mobile — removing backdrop-filter eliminates a competing GPU
+       compositing layer that can cause visual artifacts with video sections on iOS Safari */
+    background-color: #0F172A !important;
   }
 
   #hero-section {
     min-height: 100svh;
+    overflow: hidden;
   }
 
   #hero-content {
@@ -446,5 +454,11 @@ body.page-visible {
 
   #hero-scroll-indicator {
     bottom: 1.5rem;
+  }
+
+  /* Inner-page hero: use CSS variable system for consistent navbar clearance */
+  .page-hero {
+    padding-top: calc(var(--header-height) + var(--safe-area-top) + 2rem);
+    padding-bottom: 3rem;
   }
 }
