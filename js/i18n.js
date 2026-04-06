@@ -10,11 +10,20 @@ const I18N = {
 
   async loadLang(lang) {
     const base = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
-    const res = await fetch(base + 'lang/' + lang + '.json');
-    this.translations = await res.json();
-    this.currentLang = lang;
-    localStorage.setItem('lang', lang);
-    document.documentElement.lang = lang;
+    try {
+      const res = await fetch(base + 'lang/' + lang + '.json');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      this.translations = await res.json();
+      this.currentLang = lang;
+      localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang;
+    } catch (e) {
+      // Fall back to Polish if the requested language file fails to load
+      if (lang !== 'pl') {
+        localStorage.setItem('lang', 'pl');
+        await this.loadLang('pl');
+      }
+    }
   },
 
   get(key) {

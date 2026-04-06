@@ -373,6 +373,23 @@ body.page-visible {
 
 .text-blue { color: #5B9BD5; }
 
+/* ---------- Catalog cover image ---------- */
+.catalog-cover-img {
+  /* Stable aspect ratio prevents layout shift before image loads */
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  display: block;
+}
+
+/* ---------- Sector/product card images — consistent crop on all screens ---------- */
+.sector-img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  width: 100%;
+}
+
 /* ---------- Scroll-driven video ---------- */
 #scroll-video-wrapper {
   position: relative;
