@@ -18,3 +18,4 @@ node_modules/
 
 # Source/backup image files — web uses optimized JPGs
 assets/img/*.png
+.vercel
